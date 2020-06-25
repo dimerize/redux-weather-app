@@ -1,7 +1,26 @@
 body {
   font-family: 'Montserrat', sans-serif;
   font-size: 16px;
+  background-color: aqua;
+  box-sizing: border-box;
   color: #222;
+}
+
+div {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  background-color: blue;
+}
+
+section {
+  display: flex;
+  margin: 10px auto;
+  width: 75%;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  background-color: blueviolet;
 }
 
 h1 {
@@ -27,8 +46,24 @@ input {
 }
 
 .temp-wrapper {
+  height: 100%;
+  width: 50%;
+  background-color: red;
+}
+
+#temp-wrapper {
   text-align: center;
-  position: relative;
+}
+
+.graph-wrapper {
+  height: 100%;
+  width: 50%;
+  background-color: green;
+}
+
+#graph-wrapper {
+  text-align: center;
+  color: white;
 }
 
 .temp {
@@ -36,7 +71,6 @@ input {
 }
 
 .temp-symbol {
-  position: absolute;
   top: 13px;
   margin-left: 4px;
 }

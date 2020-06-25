@@ -34,12 +34,12 @@ class App extends React.Component {
   }
 
   render() {
-    let currentTemp = "Specify a location!";
+    let currentTemp = "N/A";
     if (this.state.data.list) {
       currentTemp = this.state.data.list[0].main.temp;
     }
     return (
-      <div>
+      <div class="main-container">
         <h1>Weather</h1>
         <form onSubmit={this.fetchData}>
           <label>I want to know the weather for
@@ -51,10 +51,17 @@ class App extends React.Component {
             />
           </label>
         </form>
-        <p className="temp-wrapper">
-          <span className="temp">{currentTemp}</span>
-          <span className="temp-symbol">°F</span>
-        </p>
+        <section>
+          <div class="temp-wrapper">
+            <p id="temp-wrapper">
+              <span className="temp">{currentTemp}</span>
+              <span className="temp-symbol">°F</span>
+            </p>
+          </div>
+          <div class="graph-wrapper">
+            <p id="graph-wrapper">~Add Graph Here~</p>
+          </div>
+        </section>  
       </div>
     );
   }
