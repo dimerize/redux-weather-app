@@ -1,5 +1,5 @@
 body {
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 16px;
   color: #222;
 }
@@ -16,6 +16,7 @@ input {
   border: none;
   border-bottom: 1px dotted black;
   margin-left: 0.5em;
+  font-family: 'Montserrat', sans-serif;
   font-size: 1em;
   outline: none;
 }
