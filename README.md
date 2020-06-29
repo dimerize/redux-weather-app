@@ -7,4 +7,5 @@ This is a React weather app that will soon implement Redux and will serve as a J
 ```
 $ npm install && npm run start
 ```
+
 You may have to manually install `react-scripts` if the command is not recognized in your terminal. 
