@@ -21,8 +21,8 @@ class App extends React.Component {
 
     fetch(url).then(r => r.json())
       .then(j => this.setState({
-        data: j
-      }))
+          data: j
+        }))
       .catch(e => console.log("Error: ", e));
   };
 
@@ -37,8 +37,10 @@ class App extends React.Component {
 
   render() {
     let currentTemp = "N/A";
+    let graphPlaceholder = "Graph Placeholder";
     if (this.state.data.list) {
       currentTemp = this.state.data.list[0].main.temp;
+      graphPlaceholder = this.state.data.list[0].dt_txt;
     }
     return (
       <div class="main-container">
@@ -61,7 +63,7 @@ class App extends React.Component {
             </p>
           </div>
           <div class="graph-wrapper">
-            <p id="graph-wrapper">~Add Graph Here~</p>
+          <p id="graph-wrapper">{graphPlaceholder}</p>
           </div>
         </section>  
       </div>
