@@ -1,6 +1,8 @@
 import React from 'react';
 import './App.css';
 
+import Plot from './Plot.js';
+
 class App extends React.Component {
   state = {
       location: '',
