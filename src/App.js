@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import Plot from './Plot.js';
+import Plot from 'react-plotly.js';
 
 class App extends React.Component {
   state = {
@@ -66,11 +66,19 @@ class App extends React.Component {
             </p>
           </div>
           <div class="graph-wrapper">
-            <Plot
-      		    xData={dates}
-              yData={temps}
-              type='bar'
-            /> 
+          <Plot
+            data={[
+              {
+                x: [1, 2, 3],
+                y: [2, 6, 3],
+                type: 'scatter',
+                mode: 'lines+markers',
+                marker: {color: 'red'},
+              },
+              {type: 'bar', x: [1, 2, 3], y: [2, 5, 3]},
+            ]}
+            layout={{width: 320, height: 240, title: 'A Fancy Plot'}}
+          />
           </div>
         </section>  
       </div>

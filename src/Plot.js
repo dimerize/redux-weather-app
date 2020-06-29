@@ -1,9 +1,9 @@
 import React from 'react';
-import Plotly from 'plotly.js';
+import Plotly from 'react-plotly.js';
 
 class Plot extends React.Component {
   drawPlot = () => {
-    Plotly.newPlot('plot', [{
+    Plotly.react('plot', [{
       x: this.props.xData,
       y: this.props.yData,
       type: this.props.type
@@ -12,9 +12,6 @@ class Plot extends React.Component {
         t: 0, r: 0, l: 30
       },
       xaxis: {
-        gridcolor: 'transparent'
-      }, 
-      yaxis: {
         gridcolor: 'transparent'
       }
     }, {
@@ -36,6 +33,5 @@ class Plot extends React.Component {
     );
   }
 }
-
 
 export default Plot;
