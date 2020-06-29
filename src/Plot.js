@@ -13,6 +13,9 @@ class Plot extends React.Component {
       },
       xaxis: {
         gridcolor: 'transparent'
+      }, 
+      yaxis: {
+        gridcolor: 'transparent'
       }
     }, {
       displayModeBar: false

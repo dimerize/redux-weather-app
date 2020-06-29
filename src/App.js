@@ -1,15 +1,12 @@
 import React from 'react';
 import './App.css';
-
 import Plot from './Plot.js';
 
 class App extends React.Component {
   state = {
       location: '',
       changes: 0,
-      data: {},
-      dates: [],
-      temps: []
+      data: {}
   };
   
   fetchData = (event) => {
@@ -39,10 +36,14 @@ class App extends React.Component {
 
   render() {
     let currentTemp = "N/A";
-    let graphPlaceholder = "Graph Placeholder";
+    let dates = [];
+    let temps = [];
     if (this.state.data.list) {
       currentTemp = this.state.data.list[0].main.temp;
-      graphPlaceholder = this.state.data.list[0].dt_txt;
+      for (let i = 0; i < this.state.list.length; i++) {
+        dates.push(this.state.list[i].dt_txt);
+        temps.push(this.state.list[i].main.temp);
+      }
     }
     return (
       <div class="main-container">
@@ -65,7 +66,11 @@ class App extends React.Component {
             </p>
           </div>
           <div class="graph-wrapper">
-          <p id="graph-wrapper">{graphPlaceholder}</p>
+            <Plot
+      		    xData={dates}
+              yData={temps}
+              type="bar"
+            />
           </div>
         </section>  
       </div>
