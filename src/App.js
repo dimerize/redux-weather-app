@@ -40,9 +40,9 @@ class App extends React.Component {
     let temps = [];
     if (this.state.data.list) {
       currentTemp = this.state.data.list[0].main.temp;
-      for (let i = 0; i < this.state.list.length; i++) {
-        dates.push(this.state.list[i].dt_txt);
-        temps.push(this.state.list[i].main.temp);
+      for (let i = 0; i < this.state.data.list.length; i++) {
+        dates.push(this.state.data.list[i].dt_txt);
+        temps.push(this.state.data.list[i].main.temp);
       }
     }
     return (
@@ -70,7 +70,7 @@ class App extends React.Component {
       		    xData={dates}
               yData={temps}
               type="bar"
-            />
+            /> 
           </div>
         </section>  
       </div>
