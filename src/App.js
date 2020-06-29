@@ -69,7 +69,7 @@ class App extends React.Component {
             <Plot
       		    xData={dates}
               yData={temps}
-              type="bar"
+              type='bar'
             /> 
           </div>
         </section>  
