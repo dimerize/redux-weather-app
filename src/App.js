@@ -5,7 +5,9 @@ class App extends React.Component {
   state = {
       location: '',
       changes: 0,
-      data: {}
+      data: {},
+      dates: [],
+      temps: []
   };
   
   fetchData = (event) => {
