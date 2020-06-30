@@ -9,7 +9,7 @@ class Plot extends React.Component {
       type: this.props.type
     }], {
       margin: {
-        t: 0, r: 0, l: 30
+        t: 30, r: 30, l: 30
       },
       xaxis: {
         gridcolor: 'transparent'
