@@ -66,7 +66,11 @@ class App extends React.Component {
             </p>
           </div>
           <div class="graph-wrapper">
-          
+            <Plot
+              xData={dates}
+              yData={temps}
+              type="scatter"
+            />  
           </div>
         </section>  
       </div>
