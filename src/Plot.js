@@ -1,5 +1,5 @@
 import React from 'react';
-import Plotly from 'react-plotly.js';
+import Plotly from 'plotly.js';
 
 class Plot extends React.Component {
   drawPlot = () => {

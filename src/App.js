@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-// import Plot from 'react-plotly.js';
+import Plot from './Plot.js';
 
 class App extends React.Component {
   state = {
