@@ -1,6 +1,8 @@
 import React from 'react';
 import './App.css';
 import Plot from './Plot.js';
+import { connect } from 'react-redux';
+import { changeLocation } from './Actions';
 
 class App extends React.Component {
   state = {
@@ -12,8 +14,10 @@ class App extends React.Component {
   fetchData = (event) => {
     event.preventDefault();
 
+    console.log("call made");
+
     const API_KEY = "b0043e0f630d7030d52263ad7343273a";
-    let location = encodeURIComponent(this.state.location);
+    let location = encodeURIComponent(this.props.location);
     let urlPrefix = "http://api.openweathermap.org/data/2.5/forecast?q=";
     let urlSuffix = "&APPID=" + API_KEY + "&units=imperial";
     let url = urlPrefix + location + urlSuffix;
@@ -26,7 +30,7 @@ class App extends React.Component {
   };
 
   changeLocation = (event) => {
-    this.setState({location: event.target.value, changes: this.state.changes + 1});
+    this.props.dispatch(changeLocation(event.target.value));
   };
 
   placeholderValue = () => {
@@ -53,7 +57,7 @@ class App extends React.Component {
             <input
               placeholder={this.placeholderValue()}
               type="text"
-              value={this.state.location}
+              value={this.props.location}
               onChange={this.changeLocation}
             />
           </label>
@@ -78,4 +82,10 @@ class App extends React.Component {
   }
 }
 
-export default App;
+function mapStateToProps(state) {
+	return {
+		location: state.location
+	};
+}
+
+export default connect(mapStateToProps)(App);
