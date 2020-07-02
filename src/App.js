@@ -81,6 +81,7 @@ class App extends React.Component {
 }
 
 function mapStateToProps(state) {
+  
 	return {
 		location: state.location
 	};
