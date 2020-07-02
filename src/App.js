@@ -14,8 +14,6 @@ class App extends React.Component {
   fetchData = (event) => {
     event.preventDefault();
 
-    console.log("call made");
-
     const API_KEY = "b0043e0f630d7030d52263ad7343273a";
     let location = encodeURIComponent(this.props.location);
     let urlPrefix = "http://api.openweathermap.org/data/2.5/forecast?q=";
